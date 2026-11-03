@@ -271,6 +271,47 @@ export default function App() {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
+  // 음악 가수와 노래제목을 2행으로 깔끔하게 나누어주는 렌더러
+  const renderMusicTitle = (title) => {
+    const quoteMatch = title.match(/^(.*?)\s*(['"].*)$/);
+    if (quoteMatch) {
+      const artist = quoteMatch[1].trim();
+      const song = quoteMatch[2].trim();
+      return (
+        <div className="flex flex-col">
+          {artist && (
+            <span className="text-sm sm:text-base font-semibold text-[#4B5563] leading-snug">
+              {artist}
+            </span>
+          )}
+          <span className="text-base sm:text-lg font-bold text-[#1F2937] leading-snug">
+            {song}
+          </span>
+        </div>
+      );
+    }
+    const parenMatch = title.match(/^(.*?)\s*(\(.*\))$/);
+    if (parenMatch) {
+      const main = parenMatch[1].trim();
+      const sub = parenMatch[2].trim();
+      return (
+        <div className="flex flex-col">
+          <span className="text-base sm:text-lg font-bold text-[#1F2937] leading-snug">
+            {main}
+          </span>
+          <span className="text-xs sm:text-sm font-medium text-[#6B7280] leading-snug">
+            {sub}
+          </span>
+        </div>
+      );
+    }
+    return (
+      <span className="text-base sm:text-lg font-bold text-[#1F2937] leading-snug">
+        {title}
+      </span>
+    );
+  };
+
   // 전화 상담 연결
   const handlePhoneCall = () => {
     if (!CONFIG.PHONE || CONFIG.PHONE.includes('입력')) {
@@ -369,7 +410,7 @@ export default function App() {
               <h3 className={`text-sm sm:text-base font-bold ${selectedMood.textAccent} mb-3`}>
                 마음에 띄우는 시 한편
               </h3>
-              <div className="text-lg sm:text-xl font-medium text-[#1F2937] leading-loose tracking-tight whitespace-pre-line">
+              <div className="text-base sm:text-lg font-medium text-[#1F2937] leading-loose tracking-wide whitespace-pre-line">
                 {selectedMood.poem.map((line, idx) => (
                   <p key={idx}>{line}</p>
                 ))}
@@ -419,13 +460,11 @@ export default function App() {
                     key={idx}
                     className={`p-3.5 sm:p-4 rounded-xl border-2 ${selectedMood.colorBoxBg} ${selectedMood.colorBoxBorder} flex items-center justify-between gap-3 shadow-xs`}
                   >
-                    <div className="flex flex-col">
+                    <div className="flex flex-col gap-0.5">
                       <span className={`text-xs font-bold ${selectedMood.textAccent}`}>
                         {music.theme}
                       </span>
-                      <span className="text-base sm:text-lg font-bold text-[#1F2937] leading-snug">
-                        {music.title}
-                      </span>
+                      {renderMusicTitle(music.title)}
                     </div>
                     <button
                       onClick={() => handleOpenMusic(music.title)}
@@ -505,15 +544,12 @@ export default function App() {
             ))}
           </div>
 
-          {/* 섹션 4: 6070 해피댄스 상담실 */}
+          {/* 섹션 4: 5670 행복한아지트 */}
           <div className="p-6 sm:p-7 rounded-3xl bg-white border-2 border-rose-100 shadow-sm flex flex-col gap-5 mt-2">
             <div className="text-center">
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mb-2">
-                6070 해피댄스 상담실
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111827]">
+                5670 행복한아지트
               </h3>
-              <p className="text-base sm:text-lg text-[#4B5563] leading-relaxed">
-                궁금하신 점이 있거나 수업 참여를 원하시면 언제든 편안한 마음으로 문의해 주세요.
-              </p>
             </div>
 
             <div className="flex flex-col gap-3">
