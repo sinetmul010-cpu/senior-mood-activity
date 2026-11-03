@@ -361,9 +361,11 @@ export default function App() {
               </h2>
             </div>
 
-            {/* 2. [마음에 띄우는 시 한편] */}
-            <div className="p-5 rounded-2xl bg-[#FBF9F5] border border-[#E5E7EB]">
-              <h3 className="text-sm sm:text-base font-bold text-[#6B7280] mb-3">
+            {/* 2. [마음에 띄우는 시 한편] (추천 색상 테두리 및 배경 적용) */}
+            <div
+              className={`p-5 rounded-2xl border-2 ${selectedMood.colorBoxBg} ${selectedMood.colorBoxBorder}`}
+            >
+              <h3 className={`text-sm sm:text-base font-bold ${selectedMood.textAccent} mb-3`}>
                 마음에 띄우는 시 한편
               </h3>
               <div className="text-lg sm:text-xl font-medium text-[#1F2937] leading-loose tracking-tight whitespace-pre-line">
