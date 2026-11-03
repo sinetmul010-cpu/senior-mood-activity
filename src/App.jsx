@@ -214,13 +214,13 @@ const MOOD_DATA = [
 const DANCE_PROGRAMS = [
   {
     id: 'sports',
-    title: '스포츠댄스',
-    description: '자이브, 룸바, 차차차 등 다양한 리듬과 바른 자세를 배우는 활기찬 프로그램'
+    title: '댄스스포츠',
+    description: '경쾌한 라틴음악에 맞춰 균형감과 협응동작을 통해 인지기능과 신체기능에 도움이 되는 댄스'
   },
   {
     id: 'wellbeing',
     title: '웰빙댄스',
-    description: '무리없는 동작으로 일상의 활력을 채우는 생활댄스'
+    description: '무리없는 동작으로 하체근력이 향상되고 함께하는 사람들과 소통하며 정서적 안정과 사회적 활력에 도움이 되는 댄스'
   },
   {
     id: 'folk',
@@ -554,11 +554,11 @@ export default function App() {
             ))}
           </div>
 
-          {/* 섹션 4: 5670 행복한아지트 */}
+          {/* 섹션 4: 5670 행복아지트 */}
           <div className="p-6 sm:p-7 rounded-3xl bg-white border-2 border-rose-100 shadow-sm flex flex-col gap-5 mt-2">
             <div className="text-center">
               <h3 className="text-xl sm:text-2xl font-bold text-[#374151]">
-                5670 행복한아지트
+                5670 행복아지트
               </h3>
             </div>
 
