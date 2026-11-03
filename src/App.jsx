@@ -109,7 +109,7 @@ const MOOD_DATA = [
     textAccent: 'text-rose-800',
     btnBg: 'bg-rose-600 hover:bg-rose-700',
     colorName: '열정적인 연빨강',
-    teaName: '새콤달콤한 오미자차 한잔',
+    teaName: '새콤달콤한 오미자차',
     poem: [
       '작은 발걸음 하나 떼었을 뿐인데',
       '길가의 풀꽃이 반갑게 인사를 건넨다',
@@ -422,20 +422,20 @@ export default function App() {
               </div>
             </div>
 
-            {/* 3. [어울리는 색과 건강차] */}
+            {/* 3. [어울리는 색과 추천차] */}
             <div
               className={`p-5 rounded-2xl border-2 ${selectedMood.colorBoxBg} ${selectedMood.colorBoxBorder}`}
             >
               <h3 className={`text-sm sm:text-base font-bold ${selectedMood.textAccent} mb-3`}>
-                {'< 어울리는 색과 건강차 >'}
+                {'< 어울리는 색과 추천차 >'}
               </h3>
               <div className="flex flex-col gap-2.5 text-base sm:text-lg">
-                <div className="flex items-start gap-2">
-                  <span className="font-semibold text-[#374151] min-w-[78px]">추천 색 :</span>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="font-semibold text-[#374151] whitespace-nowrap">추천 색 :</span>
                   <span className="font-medium text-[#1F2937]">{selectedMood.colorName}</span>
                 </div>
-                <div className="flex items-start gap-2">
-                  <span className="font-semibold text-[#374151] min-w-[78px]">건강차 :</span>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="font-semibold text-[#374151] whitespace-nowrap">추천 차 :</span>
                   <span className="font-medium text-[#1F2937]">{selectedMood.teaName}</span>
                 </div>
               </div>
