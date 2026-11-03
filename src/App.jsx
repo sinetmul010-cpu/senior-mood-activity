@@ -355,10 +355,10 @@ export default function App() {
           {/* 가로 구분선 */}
           <div className="w-full border-t border-[#EAE3D9] mt-5" />
 
-          {/* 안내 문구 (시니어 맞춤: 글씨 크기를 시원하고 또렷하게 확대) */}
+          {/* 안내 문구 (시니어 맞춤: 글씨 크기 동일하게 맞춤) */}
           <p className="text-[17px] sm:text-[19px] font-semibold text-[#5A504A] leading-relaxed mt-5">
             <span className="block">오늘 하루, 내 마음은 어떤 날씨인가요?</span>
-            <span className="block mt-1.5 text-[16px] sm:text-[18px] text-[#6E635D] font-medium">편안하게 골라보세요.</span>
+            <span className="block mt-1.5">편안하게 골라보세요.</span>
           </p>
         </header>
 
