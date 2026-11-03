@@ -17,9 +17,10 @@ const MOOD_DATA = [
     borderClass: 'border-yellow-200',
     hoverClass: 'hover:bg-yellow-100',
     activeClass: 'active:bg-yellow-200',
-    tagColor: 'text-yellow-700',
     colorBoxBg: 'bg-[#FEF08A]/40',
     colorBoxBorder: 'border-yellow-400',
+    textAccent: 'text-amber-800',
+    btnBg: 'bg-amber-600 hover:bg-amber-700',
     colorName: '산뜻한 노랑',
     teaName: '상큼한 제철 과일주스',
     poem: [
@@ -45,9 +46,10 @@ const MOOD_DATA = [
     borderClass: 'border-orange-200',
     hoverClass: 'hover:bg-orange-100',
     activeClass: 'active:bg-orange-200',
-    tagColor: 'text-orange-700',
     colorBoxBg: 'bg-[#FFEDD5]/50',
     colorBoxBorder: 'border-orange-400',
+    textAccent: 'text-orange-800',
+    btnBg: 'bg-orange-600 hover:bg-orange-700',
     colorName: '따뜻한 주황',
     teaName: '달콤하고 따뜻한 대추차',
     poem: [
@@ -73,9 +75,10 @@ const MOOD_DATA = [
     borderClass: 'border-emerald-200',
     hoverClass: 'hover:bg-emerald-100',
     activeClass: 'active:bg-emerald-200',
-    tagColor: 'text-emerald-700',
     colorBoxBg: 'bg-[#DCFCE7]/50',
     colorBoxBorder: 'border-emerald-400',
+    textAccent: 'text-emerald-800',
+    btnBg: 'bg-emerald-600 hover:bg-emerald-700',
     colorName: '편안한 숲속 초록',
     teaName: '은은한 캐모마일차나 따뜻한 보리차',
     poem: [
@@ -101,9 +104,10 @@ const MOOD_DATA = [
     borderClass: 'border-rose-200',
     hoverClass: 'hover:bg-rose-100',
     activeClass: 'active:bg-rose-200',
-    tagColor: 'text-rose-700',
     colorBoxBg: 'bg-[#FEE2E2]/50',
     colorBoxBorder: 'border-rose-400',
+    textAccent: 'text-rose-800',
+    btnBg: 'bg-rose-600 hover:bg-rose-700',
     colorName: '열정적인 연빨강',
     teaName: '새콤달콤한 오미자차 한잔',
     poem: [
@@ -128,9 +132,10 @@ const MOOD_DATA = [
     borderClass: 'border-sky-200',
     hoverClass: 'hover:bg-sky-100',
     activeClass: 'active:bg-sky-200',
-    tagColor: 'text-sky-700',
     colorBoxBg: 'bg-[#E0F2FE]/50',
     colorBoxBorder: 'border-sky-400',
+    textAccent: 'text-sky-800',
+    btnBg: 'bg-sky-600 hover:bg-sky-700',
     colorName: '맑은 하늘색',
     teaName: '구수한 메밀차나 연근차',
     poem: [
@@ -155,9 +160,10 @@ const MOOD_DATA = [
     borderClass: 'border-pink-200',
     hoverClass: 'hover:bg-pink-100',
     activeClass: 'active:bg-pink-200',
-    tagColor: 'text-pink-700',
     colorBoxBg: 'bg-[#FCE7F3]/50',
     colorBoxBorder: 'border-pink-400',
+    textAccent: 'text-pink-800',
+    btnBg: 'bg-pink-600 hover:bg-pink-700',
     colorName: '다정한 분홍',
     teaName: '도란도란 나눠 마시는 향긋한 전통차와 다과',
     poem: [
@@ -182,9 +188,10 @@ const MOOD_DATA = [
     borderClass: 'border-lime-200',
     hoverClass: 'hover:bg-lime-100',
     activeClass: 'active:bg-lime-200',
-    tagColor: 'text-lime-700',
     colorBoxBg: 'bg-[#ECFCCB]/50',
     colorBoxBorder: 'border-lime-400',
+    textAccent: 'text-lime-800',
+    btnBg: 'bg-lime-700 hover:bg-lime-800',
     colorName: '싱그러운 연두',
     teaName: '몸을 따뜻하게 깨우는 생강레몬차',
     poem: [
@@ -370,7 +377,7 @@ export default function App() {
             <div
               className={`p-5 rounded-2xl border-2 ${selectedMood.colorBoxBg} ${selectedMood.colorBoxBorder}`}
             >
-              <h3 className="text-sm sm:text-base font-bold text-[#4B5563] mb-3">
+              <h3 className={`text-sm sm:text-base font-bold ${selectedMood.textAccent} mb-3`}>
                 어울리는 색과 건강차
               </h3>
               <div className="flex flex-col gap-2.5 text-base sm:text-lg">
@@ -385,9 +392,11 @@ export default function App() {
               </div>
             </div>
 
-            {/* 4. [의자에서 하는 1분 관절 펴기] (음악 추천 바로 위 배치) */}
-            <div className="p-5 rounded-2xl bg-[#F0FDF4] border border-[#BBF7D0]">
-              <h3 className="text-base sm:text-lg font-bold text-[#166534] mb-2 flex items-center gap-1.5">
+            {/* 4. [의자에서 하는 1분 관절 펴기] (추천 색상 테두리 및 배경 적용) */}
+            <div
+              className={`p-5 rounded-2xl border-2 ${selectedMood.colorBoxBg} ${selectedMood.colorBoxBorder}`}
+            >
+              <h3 className={`text-base sm:text-lg font-bold ${selectedMood.textAccent} mb-2 flex items-center gap-1.5`}>
                 <span>⏱️</span>
                 <span>의자에서 하는 1분 관절 펴기</span>
               </h3>
@@ -396,7 +405,7 @@ export default function App() {
               </p>
             </div>
 
-            {/* 5. [오늘은 이 음악을 추천합니다] */}
+            {/* 5. [오늘은 이 음악을 추천합니다] (추천 색상 테두리 및 배경으로 통일) */}
             <div className="flex flex-col gap-3">
               <h3 className="text-lg sm:text-xl font-bold text-[#111827]">
                 오늘은 이 음악을 추천합니다
@@ -405,10 +414,10 @@ export default function App() {
                 {selectedMood.musicList.map((music, idx) => (
                   <div
                     key={idx}
-                    className="p-3.5 sm:p-4 rounded-xl bg-[#F9FAFB] border border-[#E5E7EB] flex items-center justify-between gap-3"
+                    className={`p-3.5 sm:p-4 rounded-xl border-2 ${selectedMood.colorBoxBg} ${selectedMood.colorBoxBorder} flex items-center justify-between gap-3 shadow-xs`}
                   >
                     <div className="flex flex-col">
-                      <span className="text-xs font-semibold text-[#6B7280]">
+                      <span className={`text-xs font-bold ${selectedMood.textAccent}`}>
                         {music.theme}
                       </span>
                       <span className="text-base sm:text-lg font-bold text-[#1F2937] leading-snug">
@@ -418,7 +427,7 @@ export default function App() {
                     <button
                       onClick={() => handleOpenMusic(music.title)}
                       style={{ minHeight: '44px' }}
-                      className="px-3.5 py-2 rounded-xl bg-[#1F2937] hover:bg-[#374151] text-white font-bold text-sm sm:text-base flex-shrink-0 cursor-pointer shadow-sm active:scale-95 transition-all"
+                      className={`px-3.5 py-2 rounded-xl text-white font-bold text-sm sm:text-base flex-shrink-0 cursor-pointer shadow-sm active:scale-95 transition-all ${selectedMood.btnBg}`}
                     >
                       ▶ 바로 듣기
                     </button>
@@ -427,9 +436,11 @@ export default function App() {
               </div>
             </div>
 
-            {/* 6. [오늘 추천하는 댄스] */}
-            <div className="p-5 rounded-2xl bg-[#FFF7ED] border border-[#FFEDD5]">
-              <h3 className="text-sm sm:text-base font-bold text-[#9A3412] mb-1.5">
+            {/* 6. [오늘 추천하는 댄스] (추천 색상 테두리 및 배경으로 조화롭게 통일) */}
+            <div
+              className={`p-5 rounded-2xl border-2 ${selectedMood.colorBoxBg} ${selectedMood.colorBoxBorder}`}
+            >
+              <h3 className={`text-sm sm:text-base font-bold ${selectedMood.textAccent} mb-1.5`}>
                 오늘 추천하는 댄스
               </h3>
               <p className="text-xl sm:text-2xl font-extrabold text-[#1F2937] mb-2">
@@ -453,7 +464,7 @@ export default function App() {
               <button
                 onClick={handleScrollToDance}
                 style={{ minHeight: '56px' }}
-                className="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white font-bold text-lg sm:text-xl cursor-pointer transition-all shadow-md active:scale-95"
+                className={`w-full py-3.5 px-5 rounded-2xl text-white font-bold text-lg sm:text-xl cursor-pointer transition-all shadow-md active:scale-95 ${selectedMood.btnBg}`}
               >
                 이 댄스의 수업 알아보기
               </button>
