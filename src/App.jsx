@@ -309,9 +309,10 @@ export default function App() {
             오늘 내 마음에 꼭 맞는 활력을 선물하세요
           </p>
 
-          {/* 안내 문구 */}
+          {/* 안내 문구 (2행 분리) */}
           <p className="text-base sm:text-lg text-[#4B5563] leading-relaxed">
-            오늘 하루, 내 마음은 어떤 날씨인가요? 편안하게 골라보세요.
+            <span className="block">오늘 하루, 내 마음은 어떤 날씨인가요?</span>
+            <span className="block mt-0.5">편안하게 골라보세요.</span>
           </p>
         </header>
 
