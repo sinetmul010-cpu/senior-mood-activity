@@ -445,9 +445,8 @@ export default function App() {
             <div
               className={`p-5 rounded-2xl border-2 ${selectedMood.colorBoxBg} ${selectedMood.colorBoxBorder}`}
             >
-              <h3 className={`text-base sm:text-lg font-bold ${selectedMood.textAccent} mb-2 flex items-center gap-1.5`}>
-                <span>⏱️</span>
-                <span>{'< 의자에서 하는 1분 관절 펴기 >'}</span>
+              <h3 className={`text-sm sm:text-base font-bold ${selectedMood.textAccent} mb-3`}>
+                {'< 의자에서 하는 1분 관절 펴기 >'}
               </h3>
               <p className="text-base sm:text-lg text-[#1F2937] leading-relaxed font-medium">
                 {selectedMood.stretching}
