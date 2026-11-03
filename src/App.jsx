@@ -220,7 +220,7 @@ const DANCE_PROGRAMS = [
   {
     id: 'wellbeing',
     title: '웰빙댄스',
-    description: '무리없는 동작으로 하체근력이 향상되고 함께하는 사람들과 소통하며 정서적 안정과 사회적 활력에 도움이 되는 댄스'
+    description: '무리없는 동작으로 안전하며 심리.정서적안정과 사회적 활력에 도움이 되는 생활댄스'
   },
   {
     id: 'folk',
