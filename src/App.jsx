@@ -338,9 +338,13 @@ export default function App() {
         {/* [1. 앱 기본 정보 및 상단 헤더] */}
         {/* ==================================================== */}
         <header className="text-center py-4 sm:py-6">
-          {/* 첫 행: 메인 타이틀 (24px~26px, 웜 차콜 + '리듬따라' 테라코타 코랄 포인트) */}
-          <h1 className="text-[25px] sm:text-[28px] font-bold text-[#2D2422] tracking-tight leading-snug">
-            마음따라 기분따라 <span className="text-[#E07A5F]">리듬따라</span>
+          {/* 첫 행: 메인 타이틀 (세 가지 조화로운 웰니스 컬러로 구분 적용) */}
+          <h1 className="text-[23px] sm:text-[27px] font-bold tracking-tight leading-snug">
+            <span className="text-[#3B6E52]">마음따라~</span>
+            <span className="inline-block mx-1.5 sm:mx-2">&nbsp;</span>
+            <span className="text-[#C97A2B]">기분따라~</span>
+            <span className="inline-block mx-1.5 sm:mx-2">&nbsp;</span>
+            <span className="text-[#E07A5F]">리듬따라~</span>
           </h1>
 
           {/* 둘째 행: 서브 슬로건 (15px~16px, 웜 그레이, mt-2.5로 10px 상단 여백) */}
@@ -526,7 +530,7 @@ export default function App() {
         <section ref={danceSectionRef} className="flex flex-col gap-6 pt-4 border-t border-[#E5E7EB]">
           {/* 섹션 3: 댄스 프로그램 카드 3종 */}
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mb-2">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#2D2422] mb-1.5">
               함께 즐기는 댄스 프로그램
             </h2>
             <p className="text-base sm:text-lg text-[#4B5563]">
