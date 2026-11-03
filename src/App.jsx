@@ -331,27 +331,25 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FBF9F5] text-[#1F2937] font-sans antialiased selection:bg-amber-200">
-      <div className="max-w-md mx-auto px-4 py-8 sm:py-10 flex flex-col gap-10">
+    <div className="min-h-screen bg-[#FAF7F2] text-[#2D2422] font-sans antialiased selection:bg-amber-200">
+      <div className="max-w-md mx-auto px-4 py-8 sm:py-10 flex flex-col gap-8">
 
         {/* ==================================================== */}
         {/* [1. 앱 기본 정보 및 상단 헤더] */}
         {/* ==================================================== */}
-        <header className="text-center pt-2">
-          {/* 타이틀: 부드럽고 다정한 서체 느낌에 화사한 그라데이션 적용 */}
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">
-            <span className="bg-gradient-to-r from-amber-500 via-rose-500 to-pink-500 bg-clip-text text-transparent">
-              마음따라 춤따라
-            </span>
+        <header className="text-center py-4 sm:py-6">
+          {/* 첫 행: 메인 타이틀 (24px~26px, 웜 차콜 + '리듬따라' 테라코타 코랄 포인트) */}
+          <h1 className="text-[25px] sm:text-[28px] font-bold text-[#2D2422] tracking-tight leading-snug">
+            마음따라 기분따라 <span className="text-[#E07A5F]">리듬따라</span>
           </h1>
 
-          {/* 슬로건 */}
-          <p className="text-xl sm:text-2xl font-bold text-[#1F2937] mb-3 leading-snug">
+          {/* 둘째 행: 서브 슬로건 (15px~16px, 웜 그레이, mt-2.5로 10px 상단 여백) */}
+          <p className="text-[15px] sm:text-[16px] text-[#6E6661] mt-2.5 font-medium leading-relaxed">
             오늘 내 마음에 꼭 맞는 활력을 선물하세요
           </p>
 
           {/* 안내 문구 (2행 분리) */}
-          <p className="text-base sm:text-lg text-[#4B5563] leading-relaxed">
+          <p className="text-[14px] sm:text-[15px] text-[#8C837D] leading-relaxed mt-4 pt-3 border-t border-[#EAE3D9]/70">
             <span className="block">오늘 하루, 내 마음은 어떤 날씨인가요?</span>
             <span className="block mt-0.5">편안하게 골라보세요.</span>
           </p>
