@@ -220,7 +220,7 @@ const DANCE_PROGRAMS = [
   {
     id: 'wellbeing',
     title: '웰빙댄스',
-    description: '누구나 쉽게 따라 하며 몸과 마음의 긴장을 푸는 생활 친화형 댄스'
+    description: '무리없는 동작으로 일상의 활력을 채우는 생활댄스'
   },
   {
     id: 'folk',
@@ -342,7 +342,7 @@ export default function App() {
           <h1 className="text-[23px] sm:text-[27px] font-bold tracking-tight leading-snug">
             <span className="text-[#3B6E52]">마음따라~</span>
             <span className="inline-block mx-1.5 sm:mx-2">&nbsp;</span>
-            <span className="text-[#C97A2B]">기분따라~</span>
+            <span className="text-[#2F6DAE]">기분따라~</span>
             <span className="inline-block mx-1.5 sm:mx-2">&nbsp;</span>
             <span className="text-[#E07A5F]">리듬따라~</span>
           </h1>
@@ -544,7 +544,7 @@ export default function App() {
                 key={program.id}
                 className="p-5 sm:p-6 rounded-2xl bg-white border border-[#E5E7EB] shadow-sm flex flex-col gap-2"
               >
-                <h3 className="text-xl sm:text-2xl font-bold text-[#111827]">
+                <h3 className="text-lg sm:text-xl font-bold text-[#2D2422]">
                   {program.title}
                 </h3>
                 <p className="text-base sm:text-lg text-[#4B5563] leading-relaxed">
