@@ -352,10 +352,13 @@ export default function App() {
             오늘 내 마음에 꼭 맞는 활력을 선물하세요
           </p>
 
-          {/* 안내 문구 (2행 분리) */}
-          <p className="text-[14px] sm:text-[15px] text-[#8C837D] leading-relaxed mt-4 pt-3 border-t border-[#EAE3D9]/70">
+          {/* 가로 구분선 */}
+          <div className="w-full border-t border-[#EAE3D9] mt-5" />
+
+          {/* 안내 문구 (가로 줄 아래에 한 행 아래로 여유 있게 이동) */}
+          <p className="text-[14px] sm:text-[15px] text-[#8C837D] leading-relaxed mt-5">
             <span className="block">오늘 하루, 내 마음은 어떤 날씨인가요?</span>
-            <span className="block mt-0.5">편안하게 골라보세요.</span>
+            <span className="block mt-1">편안하게 골라보세요.</span>
           </p>
         </header>
 
