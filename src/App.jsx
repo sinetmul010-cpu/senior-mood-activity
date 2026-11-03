@@ -355,10 +355,10 @@ export default function App() {
           {/* 가로 구분선 */}
           <div className="w-full border-t border-[#EAE3D9] mt-5" />
 
-          {/* 안내 문구 (가로 줄 아래에 한 행 아래로 여유 있게 이동) */}
-          <p className="text-[14px] sm:text-[15px] text-[#8C837D] leading-relaxed mt-5">
+          {/* 안내 문구 (시니어 맞춤: 글씨 크기를 시원하고 또렷하게 확대) */}
+          <p className="text-[17px] sm:text-[19px] font-semibold text-[#5A504A] leading-relaxed mt-5">
             <span className="block">오늘 하루, 내 마음은 어떤 날씨인가요?</span>
-            <span className="block mt-1">편안하게 골라보세요.</span>
+            <span className="block mt-1.5 text-[16px] sm:text-[18px] text-[#6E635D] font-medium">편안하게 골라보세요.</span>
           </p>
         </header>
 
@@ -398,22 +398,14 @@ export default function App() {
             aria-label="맞춤 처방 결과"
             className="flex flex-col gap-6 p-6 sm:p-7 rounded-3xl bg-white border border-[#E5E7EB] shadow-md scroll-mt-6"
           >
-            {/* 1. 헤더 (2행 구성 및 상단 다른 기분 골라보기 버튼) */}
-            <div className="border-b border-[#F3F4F6] pb-4 flex items-center justify-between gap-3">
-              <div>
-                <span className="text-sm sm:text-base font-semibold text-[#6B7280] block mb-1">
-                  오늘의 마음
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] leading-tight">
-                  {selectedMood.responseTitle}
-                </h2>
-              </div>
-              <button
-                onClick={handleReset}
-                className="px-3.5 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 border-2 border-gray-400 text-[#1F2937] font-bold text-xs sm:text-sm flex-shrink-0 cursor-pointer shadow-xs active:scale-95 transition-all text-center leading-snug"
-              >
-                다른 기분<br className="sm:hidden" /> 골라보기
-              </button>
+            {/* 1. 헤더 (오늘의 마음 & 한 줄 타이틀, 상단 버튼 제거) */}
+            <div className="border-b border-[#F3F4F6] pb-4">
+              <span className="text-sm sm:text-base font-semibold text-[#6B7280] block mb-1">
+                오늘의 마음
+              </span>
+              <h2 className="text-[20px] sm:text-2xl md:text-3xl font-extrabold text-[#111827] leading-tight whitespace-nowrap tracking-tight">
+                {selectedMood.responseTitle}
+              </h2>
             </div>
 
             {/* 2. [마음에 띄우는 시 한편] (추천 색상 테두리 및 배경 적용) */}
@@ -421,7 +413,7 @@ export default function App() {
               className={`p-5 rounded-2xl border-2 ${selectedMood.colorBoxBg} ${selectedMood.colorBoxBorder}`}
             >
               <h3 className={`text-sm sm:text-base font-bold ${selectedMood.textAccent} mb-3`}>
-                마음에 띄우는 시 한편
+                {'< 마음에 띄우는 시 한편 >'}
               </h3>
               <div className="text-base sm:text-lg font-medium text-[#1F2937] leading-loose tracking-wide whitespace-pre-line">
                 {selectedMood.poem.map((line, idx) => (
@@ -435,7 +427,7 @@ export default function App() {
               className={`p-5 rounded-2xl border-2 ${selectedMood.colorBoxBg} ${selectedMood.colorBoxBorder}`}
             >
               <h3 className={`text-sm sm:text-base font-bold ${selectedMood.textAccent} mb-3`}>
-                어울리는 색과 건강차
+                {'< 어울리는 색과 건강차 >'}
               </h3>
               <div className="flex flex-col gap-2.5 text-base sm:text-lg">
                 <div className="flex items-start gap-2">
@@ -455,7 +447,7 @@ export default function App() {
             >
               <h3 className={`text-base sm:text-lg font-bold ${selectedMood.textAccent} mb-2 flex items-center gap-1.5`}>
                 <span>⏱️</span>
-                <span>의자에서 하는 1분 관절 펴기</span>
+                <span>{'< 의자에서 하는 1분 관절 펴기 >'}</span>
               </h3>
               <p className="text-base sm:text-lg text-[#1F2937] leading-relaxed font-medium">
                 {selectedMood.stretching}
@@ -474,8 +466,8 @@ export default function App() {
                     className={`p-3.5 sm:p-4 rounded-xl border-2 ${selectedMood.colorBoxBg} ${selectedMood.colorBoxBorder} flex items-center justify-between gap-3 shadow-xs`}
                   >
                     <div className="flex flex-col gap-0.5">
-                      <span className={`text-xs font-bold ${selectedMood.textAccent}`}>
-                        {music.theme}
+                      <span className={`text-xs sm:text-sm font-bold ${selectedMood.textAccent}`}>
+                        {`< ${music.theme} >`}
                       </span>
                       {renderMusicTitle(music.title)}
                     </div>
@@ -496,7 +488,7 @@ export default function App() {
               className={`p-5 rounded-2xl border-2 ${selectedMood.colorBoxBg} ${selectedMood.colorBoxBorder}`}
             >
               <h3 className={`text-sm sm:text-base font-bold ${selectedMood.textAccent} mb-1.5`}>
-                오늘 추천하는 댄스
+                {'< 오늘 추천하는 댄스 >'}
               </h3>
               <p className="text-xl sm:text-2xl font-extrabold text-[#1F2937] mb-2">
                 {selectedMood.danceName}
@@ -533,12 +525,9 @@ export default function App() {
         <section ref={danceSectionRef} className="flex flex-col gap-6 pt-4 border-t border-[#E5E7EB]">
           {/* 섹션 3: 댄스 프로그램 카드 3종 */}
           <div className="text-center">
-            <h2 className="text-xl sm:text-2xl font-bold text-[#2D2422] mb-1.5">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#2D2422]">
               함께 즐기는 댄스 프로그램
             </h2>
-            <p className="text-base sm:text-lg text-[#4B5563]">
-              몸도 마음도 한결 가벼워지는 즐거운 움직임을 함께합니다.
-            </p>
           </div>
 
           <div className="flex flex-col gap-4">
