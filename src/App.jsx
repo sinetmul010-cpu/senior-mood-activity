@@ -557,7 +557,7 @@ export default function App() {
           {/* 섹션 4: 5670 행복한아지트 */}
           <div className="p-6 sm:p-7 rounded-3xl bg-white border-2 border-rose-100 shadow-sm flex flex-col gap-5 mt-2">
             <div className="text-center">
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111827]">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#374151]">
                 5670 행복한아지트
               </h3>
             </div>
