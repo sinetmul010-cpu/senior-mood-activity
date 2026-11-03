@@ -385,12 +385,12 @@ export default function App() {
               </h3>
               <div className="flex flex-col gap-2.5 text-base sm:text-lg">
                 <div className="flex items-start gap-2">
-                  <span className="font-bold text-[#374151] min-w-[70px]">추천 색:</span>
-                  <span className="font-extrabold text-[#111827]">{selectedMood.colorName}</span>
+                  <span className="font-semibold text-[#374151] min-w-[78px]">추천 색 :</span>
+                  <span className="font-medium text-[#1F2937]">{selectedMood.colorName}</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span className="font-bold text-[#374151] min-w-[70px]">건강차:</span>
-                  <span className="font-extrabold text-[#111827]">{selectedMood.teaName}</span>
+                  <span className="font-semibold text-[#374151] min-w-[78px]">건강차 :</span>
+                  <span className="font-medium text-[#1F2937]">{selectedMood.teaName}</span>
                 </div>
               </div>
             </div>
