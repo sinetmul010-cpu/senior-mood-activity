@@ -215,7 +215,7 @@ const DANCE_PROGRAMS = [
   {
     id: 'sports',
     title: '댄스스포츠',
-    description: '경쾌한 라틴음악에 맞춰 균형감과 협응동작을 통해 인지기능과 신체기능에 도움이 되는 댄스'
+    description: '경쾌한 라틴음악에 맞춰 균형감과 협응동작을 통해 인지기능과 신체기능에 도움이 되는 건강댄스'
   },
   {
     id: 'wellbeing',
