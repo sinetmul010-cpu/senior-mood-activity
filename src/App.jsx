@@ -498,7 +498,7 @@ export default function App() {
               <button
                 onClick={handleReset}
                 style={{ minHeight: '56px' }}
-                className="w-full py-3.5 px-5 rounded-2xl bg-[#E5E7EB] hover:bg-[#D1D5DB] text-[#1F2937] font-bold text-lg sm:text-xl cursor-pointer transition-colors shadow-sm active:scale-95"
+                className="w-full py-3.5 px-5 rounded-2xl bg-[#E5E7EB] hover:bg-[#D1D5DB] border-2 border-[#9CA3AF] hover:border-[#6B7280] text-[#1F2937] font-bold text-lg sm:text-xl cursor-pointer transition-colors shadow-sm active:scale-95"
               >
                 다른 기분 골라보기
               </button>
