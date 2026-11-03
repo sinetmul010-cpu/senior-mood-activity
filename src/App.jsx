@@ -393,14 +393,22 @@ export default function App() {
             aria-label="맞춤 처방 결과"
             className="flex flex-col gap-6 p-6 sm:p-7 rounded-3xl bg-white border border-[#E5E7EB] shadow-md scroll-mt-6"
           >
-            {/* 1. 헤더 (2행 구성, 이미지/이모지 없음) */}
-            <div className="border-b border-[#F3F4F6] pb-4">
-              <span className="text-sm sm:text-base font-semibold text-[#6B7280] block mb-1">
-                오늘의 마음
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] leading-tight">
-                {selectedMood.responseTitle}
-              </h2>
+            {/* 1. 헤더 (2행 구성 및 상단 다른 기분 골라보기 버튼) */}
+            <div className="border-b border-[#F3F4F6] pb-4 flex items-center justify-between gap-3">
+              <div>
+                <span className="text-sm sm:text-base font-semibold text-[#6B7280] block mb-1">
+                  오늘의 마음
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] leading-tight">
+                  {selectedMood.responseTitle}
+                </h2>
+              </div>
+              <button
+                onClick={handleReset}
+                className="px-3.5 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 border-2 border-gray-400 text-[#1F2937] font-bold text-xs sm:text-sm flex-shrink-0 cursor-pointer shadow-xs active:scale-95 transition-all text-center leading-snug"
+              >
+                다른 기분<br className="sm:hidden" /> 골라보기
+              </button>
             </div>
 
             {/* 2. [마음에 띄우는 시 한편] (추천 색상 테두리 및 배경 적용) */}
@@ -498,7 +506,7 @@ export default function App() {
               <button
                 onClick={handleReset}
                 style={{ minHeight: '56px' }}
-                className="w-full py-3.5 px-5 rounded-2xl bg-[#E5E7EB] hover:bg-[#D1D5DB] border-2 border-[#9CA3AF] hover:border-[#6B7280] text-[#1F2937] font-bold text-lg sm:text-xl cursor-pointer transition-colors shadow-sm active:scale-95"
+                className="w-full py-3.5 px-5 rounded-2xl bg-[#F3F4F6] hover:bg-[#E5E7EB] border-2 border-[#6B7280] hover:border-[#374151] text-[#1F2937] font-bold text-lg sm:text-xl cursor-pointer transition-colors shadow-sm active:scale-95 text-center"
               >
                 다른 기분 골라보기
               </button>
